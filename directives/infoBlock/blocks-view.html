@@ -1,0 +1,50 @@
+
+<div class="container">
+
+    <div class="index-state container">
+
+        <br><br>
+
+        <div class="row">
+
+            <div ng-repeat="block in infoBlockData">
+                <div class="col-md-6">
+                    <div class="info-block" info-block 
+                         block-title="{{block.itemTitle}}" 
+                         block-content="{{block.itemContent}}"
+                         block-icon="{{block.itemIcon}}"
+                         block-url="{{block.itemUrl}}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-block" info-block 
+                     block-title="My title is in the directive attribute" 
+                     block-content="I have hardcoded text data in my directive attributes"
+                     block-icon="fa-pie-chart"
+                     block-url="just-like-that">
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="info-block" info-block 
+                     block-title="I don`t point to anywhere and..."
+                     block-icon="fa-file-text">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>

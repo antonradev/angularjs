@@ -1,0 +1,8 @@
+<div class="info-block-icon">
+    <span class="fa {{blockIcon}} fa-3x"></span>
+</div>
+
+<h3><a ui-sref="/{{blockUrl}}">{{blockTitle}}</a></h3>
+
+<p ng-show="blockContent">{{blockContent}}</p>
+<p ng-if="!blockContent">I am a default text of the paragraph in the directive template</p>
