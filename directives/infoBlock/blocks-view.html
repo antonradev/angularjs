@@ -2,18 +2,18 @@
 <div class="container">
 
     <div class="index-state container">
-
         <br><br>
-
         <div class="row">
 
             <div ng-repeat="block in infoBlockData">
                 <div class="col-md-6">
                     <div class="info-block" info-block 
+                         blockid="{{block.itemId}}" 
                          block-title="{{block.itemTitle}}" 
                          block-content="{{block.itemContent}}"
                          block-icon="{{block.itemIcon}}"
-                         block-url="{{block.itemUrl}}">
+                         block-url="{{block.itemUrl}}"
+                         ng-class="{'block-is-marked' : markedItems.indexOf({{block.itemId}}) !== - 1}">
                     </div>
                 </div>
             </div>
@@ -25,23 +25,37 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="info-block" info-block 
+                     blockid="3843" 
                      block-title="My title is in the directive attribute" 
                      block-content="I have hardcoded text data in my directive attributes"
                      block-icon="fa-pie-chart"
-                     block-url="just-like-that">
+                     block-url="just-like-that"
+                     ng-class="{'block-is-marked' : markedItems.indexOf(3843) !== - 1}">
                 </div>
 
             </div>
 
             <div class="col-md-6">
-                <div class="info-block" info-block 
+                <div class="info-block" info-block
+                     blockid="848658"
                      block-title="I don`t point to anywhere and..."
-                     block-icon="fa-file-text">
+                     block-icon="fa-file-text"
+                     ng-class="{'block-is-marked' : markedItems.indexOf(848658) !== - 1}">
                 </div>
 
             </div>
 
         </div>
+
+        <div ng-if="markedItems.length > 0">
+            <br><hr>
+            Marked items: &nbsp; &nbsp;
+            <span ng-repeat="markedItem in markedItems">
+                <span class="unmark-item" ng-click="clearItem({{markedItem}})"><i class="fa fa-times"></i> {{markedItem}}</span>
+            </span>
+        </div>
+
+
 
 
 
