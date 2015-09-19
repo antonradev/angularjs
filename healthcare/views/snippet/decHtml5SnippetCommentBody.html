@@ -1,0 +1,59 @@
+<div class="snippet-comment" cgm-context-menu="contextMenuActions(comment)" ng-dblclick="editComment(comment)">
+    <span class="snippet-row-mark"
+          ng-class="{'row-mark-very-important' : comment.decPriority.style === 'highest',
+            'row-mark-attention' : comment.decPriority.style === 'high'}">
+    </span>
+
+    <div class="dec-html5-snippet-info-bar dec-clearfix">
+        <div class="dates-container">
+            <span class="main-icon" cgm-tooltip="comment.decPriority.title">
+                <span ng-if="comment.decPriority.style === 'highest'"
+                      class="ico-outline-pi-highest priority-icon color-very-important"></span>
+                <span ng-if="comment.decPriority.style === 'high'"
+                      class="ico-outline-pi-high priority-icon color-attention"></span>
+                <span ng-if="comment.decPriority.style === 'normal'"></span>
+            </span>
+            <span class="shift-icon">
+                <span class="ico-outline-si-nightshift" ng-show="comment.decShift.style === 'night'"
+                      cgm-tooltip="comment.decShift.title"></span>
+                <span class="ico-outline-si-dayshift" ng-show="comment.decShift.style === 'day'"
+                      cgm-tooltip="comment.decShift.title"></span>
+            </span>
+            <span cgm-tooltip="snippetDateTooltip(comment.decTimeReg, comment.decTimeReal)" class="time-and-date">
+                <span class="time">
+                    {{referenceDate === 'REGISTRATION_DATE' ? comment.decTimeReg.time : comment.decTimeReal.time}}
+                </span>
+                <span class="registration-date">
+                    {{referenceDate === 'REGISTRATION_DATE' ? comment.decTimeReg.date : comment.decTimeReal.date}}
+                </span>
+            </span>
+        </div>
+        <span class="state-icon">
+            <span ng-show="comment.decState.style === 'delete'"
+                  class="ico-outline-tb-delete" cgm-tooltip="comment.decState.title"></span>
+            <span ng-show="comment.decState.style === 'edit'"
+                  class="ico-outline-tb-edit" cgm-tooltip="comment.decState.title"></span>
+        </span>
+        <span class="author" hx-truncation-tooltip>
+            <span ng-if="comment.decAuthorFullName">
+                <!--<span ng-if="comment.decAuthorRoleName" class="dec-author-role">{{comment.decAuthorRoleName}}</span>-->
+                <span>{{comment.decAuthorFullName}}</span>
+                <span ng-if="comment.decGroupName">&mdash;</span> {{comment.decGroupName}}
+            </span>
+        </span>
+    </div>
+    <div class="snippet-comment-text"
+         ng-class="{'deleted' : comment.decState.style === 'delete'}">
+        <div ng-if="comment.decDeletionReason && comment.decState.style === 'delete'" class="deletion-reason"
+             ng-bind-html="comment.decDeletionReason"></div>
+        <span ng-bind-html="comment.decComment"></span>
+
+        <div class="snippet-comment-source">
+            <span ng-if="(comment.decSource.length) > 0">
+                <span ng-repeat="source in comment.decSource">
+                    {{source}}{{$last ? '' : ', '}}
+                </span>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.table-toolbar-actions {
+  .table-action-button {
+
+    .ico-outline-tb-show {
+      font-size: 19px;
+    }
+    .ico-outline-tb-audittrail{
+      font-size: $_24pt;
+    }
+    .ico-outline-tb-refresh{
+      font-size: $_24pt;
+    }
+  }
+
+  .table-action-button[disabled=disabled], .table-action-button:disabled {
+    .label {
+      color: $disabledText;
+    }
+  }
+
+  .cgm-toolbar{
+    border-bottom: none;
+  }
+
+  .cgm-toolbar.dec-fix {
+    border-bottom: none;
+    .cgm-toolbar-temporary-fix.sh-toolbar-left {
+
+      .cgm-truncation {
+        padding: 0 12px;
+        height: 32px;
+      }
+
+      .icon-text-button.cgm-button {
+        margin: 0 0.38rem;
+      }
+
+      .ico-24pt {
+        font-size: $_24pt;
+        text-align: center;
+      }
+
+      button {
+        vertical-align: middle;
+        span:last-child {
+          display: inline-block;
+          font-size: $_14pt;
+          margin-left: 7px;
+          text-align: center;
+          line-height: $_24pt;
+        }
+      }
+
+    }
+
+    .cgm-toolbar.sh-toolbar-right {
+      text-align: right;
+      .cgm-button.show-history {
+        border-right: 1px solid #d3d3d3 !important;
+      }
+    }
+  }
+}

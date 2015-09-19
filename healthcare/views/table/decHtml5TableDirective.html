@@ -1,0 +1,56 @@
+<cgm-section id="decTableCnt">
+
+    <cgm-table id="decTable"
+               hx-data-source="commentSource"
+               on-row-click="decTableOnRowSelect($event)"
+               ng-dblclick="showEditDialog()"
+               cgm-context-menu="decTableContext"
+
+               groupable="{{decTableGroupable}}"
+               groups="decTableGroups"
+               groups-renderer="decTableGroupsRenderer"
+               groups-expanded-by-default="{{decTableGroupsExpandedByDefault}}"
+               ready="onTableReady"
+               selection-mode="row"
+               sortable="true"
+               filterable="true"
+               filter-mode="excel"
+
+               virtual-mode="true"
+
+               columns-resize="true"
+               columns-reorder="true"
+
+               auto-height="true"
+               auto-row-height="true"
+               columns-menu-width="45"
+               paddings-type="small"
+               width="100%"
+               theme="cgm">
+        <!--height="{{decTableHeight}}"-->
+
+        <!-- TODO: column texts to be translated -->
+
+        <cgm-table-column datafield="priority" cells-renderer="decCellsRenderer.priority" text="{{'/cgm/g3/his/dec/decursusList.decPriority.header'|i18n}}" width="3%"></cgm-table-column>
+
+        <cgm-table-column datafield="id" cells-renderer="decShiftRenderer" text="{{'/cgm/g3/his/dec/decursusList.decShift.header'|i18n}}" width="5%" align="center"></cgm-table-column>
+
+        <cgm-table-column datafield="systemDate" cells-renderer="decCellsRenderer.time.reg" text="{{'/cgm/g3/his/dec/decursusList.decTimeReg.header'|i18n}}" width="4%"></cgm-table-column>
+
+        <cgm-table-column datafield="actionDate" cells-renderer="decCellsRenderer.time.real" text="{{'/cgm/g3/his/dec/decursusList.decTimeReal.header'|i18n}}" width="4%"></cgm-table-column>
+
+        <cgm-table-column datafield="state" cells-renderer="decCellsRenderer.state" text="{{'/cgm/g3/his/dec/decursusList.decState.header'|i18n}}" width="5%" align="center"></cgm-table-column>
+
+        <cgm-table-column datafield="information" cells-renderer="decCellsRenderer.comment" text="{{'/cgm/g3/his/dec/decursusList.decComment.header'|i18n}}" width="47%"></cgm-table-column>
+
+        <cgm-table-column datafield="sourceLabels" cells-renderer="decCellsRenderer.source" text="{{'/cgm/g3/his/dec/decursusList.decSource.header'|i18n}}" width="11%"></cgm-table-column>
+
+        <cgm-table-column datafield="groupName" cells-renderer="decCellsRenderer.group" text="{{'/cgm/g3/his/dec/decursusList.decGroup.header'|i18n}}" width="6%"></cgm-table-column>
+
+        <cgm-table-column datafield="authorFullName" cells-renderer="decCellsRenderer.author" text="{{'/cgm/g3/his/dec/decursusList.decAuthor.header'|i18n}}" width="9%"></cgm-table-column>
+
+        <cgm-table-column datafield="authorRoleName" cells-renderer="decCellsRenderer.role" text="{{'/cgm/g3/his/dec/decursusList.decRole.header'|i18n}}" width="6%"></cgm-table-column>
+
+    </cgm-table>
+
+</cgm-section>

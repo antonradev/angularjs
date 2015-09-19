@@ -1,0 +1,20 @@
+<div class="table-toolbar-actions" dec-html5-table-visibility-settings>
+    <div class="cgm-toolbar dec-fix">
+        <cgm-toolbar class="cgm-toolbar-temporary-fix sh-toolbar-left" commands="toolbarCommands"></cgm-toolbar>
+        <div class="cgm-toolbar sh-toolbar-right">
+            <his-visibility-settings class="pull-right"
+                                     complex-type="/cgm/g3/his/dec/search/VisibilitySettings"
+                                     apply-settings="applyVisibilitySettings"
+                                     before-save="beforeVisibilitySettingsSave"
+                                     visibility-settings-template="{{'features/dec/views/settings/visibilitySettingsModal.html'|hispathresolve:'dec-html5-client'}}"
+                                     default-visibility-settings="defaultEpisodeEventVisibilitySettings">
+            </his-visibility-settings>
+            <cgm-button ng-click="toolbarActions.history()" ng-disabled="!actionButtons.history" class="table-action-button show-history" cgm-tooltip="'{{'/cgm/g3/his/dec/decursusList.showHistoryTooltip.label'|i18n}}'">
+                <span class="ico-outline-tb-audittrail"></span>
+            </cgm-button>
+            <cgm-button ng-click="toolbarActions.reload()" class="table-action-button" cgm-tooltip="'{{'/cgm/g3/his/dec/decursusList.refreshTooltip.label'|i18n}}'">
+                <span class="ico-outline-tb-refresh"></span>
+            </cgm-button>
+        </div>
+    </div>
+</div>

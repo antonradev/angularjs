@@ -1,0 +1,97 @@
+@import "../../../modules/cgm-css-base/styles/sass/base";
+
+/* Comments priority colors for snippets and table comments */
+$priorityColorVeryImportant: #f2687d;
+$priorityColorAttention: #ffc914;
+
+$decRedColor: $priorityColorVeryImportant;
+
+/* Date comment color */
+$dateCommentColor: #b2b2b2;
+
+/* Deleted comment color */
+$deletedCommentColor: #b2b2b2;
+
+/* Disabled Text color */
+$disabledText: #bbb;
+
+/* Default CGM icons color */
+$cgmIconDefaultColor: #0074bc;
+
+/* Default CGM text color */
+$cgmTextDefaultColor: #282828;
+
+/* CGM input border color */
+$decErrorColor: #e3000f;
+
+
+.dec-clearfix {
+  *zoom: 1;
+}
+.dec-clearfix:before,
+.dec-clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.dec-clearfix:after {
+  clear: both;
+}
+
+
+/* Font-based icons properties */
+%ico-outline {
+  display: inline-block;
+  font-family: CGM-Symbols-Outline-V2;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  @include font-smoothing(antialiased);
+}
+
+.dec-asterisk {
+  color: $decRedColor;
+}
+
+.dec-tiny-mce-container {
+  padding-right: 28px;
+}
+.mce-tinymce.mce-container.mce-panel {
+  border: 1px #d3d3d3 solid;
+}
+.dec-tiny-mce-error .mce-tinymce.mce-container.mce-panel {
+  border: 1px $decErrorColor solid;
+}
+
+.add-comment-edit-mode-author {
+  color: #6f6f6f;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: $_12pt;
+}
+.dec-focused-input {
+  border: 1px solid #0074bc;
+  border-top-color: rgb(0, 116, 188);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: rgb(0, 116, 188);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: rgb(0, 116, 188);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgb(0, 116, 188);
+  border-left-style: solid;
+  border-left-width: 1px;
+  box-shadow: #0074bc 0 0 .38rem;
+}
+
+.comment-dialog-patient-data {
+  color: #282828;
+  font-size: 0.88rem;
+}
+
+@import "snippet.scss";
+@import "table.scss";
+@import "table-toolbar.scss";
+@import "visibility-settings.scss";
